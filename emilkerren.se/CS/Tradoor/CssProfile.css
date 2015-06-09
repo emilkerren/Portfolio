@@ -1,0 +1,16 @@
+﻿
+p{
+    display:inline-grid;
+    width:150px;
+}
+
+.Empty {
+    background:url("/Images/Unfilled.gif") no-repeat right top
+}
+.Empty:hover{
+    background:url("/Images/Filled.gif") no-repeat right top
+}
+.Filled{
+    background:url("/Images/Filled.gif") no-repeat right top
+}
+

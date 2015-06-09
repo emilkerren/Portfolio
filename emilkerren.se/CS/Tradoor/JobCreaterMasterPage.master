@@ -1,0 +1,34 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="../Tradoor/JobCreaterMasterPage.master.cs" Inherits="JobCreaterMasterPage" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder id="head" runat="server">
+       
+        <link href="CssProfile.css" rel="stylesheet" />
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+        <asp:ContentPlaceHolder id="ContentPlaceHolderJobCreator" runat="server">
+         <h1>Tradoor.se, employeer</h1>
+        <asp:Button ID="Btn_logout" runat="server" Text="Logout" Visible="true" OnClick="Btn_logout_Click" />
+        <br />
+        <asp:Label ID="statusLabel" runat="server" ForeColor="Red"></asp:Label><br />
+        </asp:ContentPlaceHolder><br /><br />
+        <asp:ContentPlaceHolder ID="NavigationContent" runat="server">
+        <asp:LinkButton ID="linkBtn_addJob" Text="add job" runat="server" OnClick="gotoAddJobPage" Visible="true"></asp:LinkButton><br />
+        <asp:LinkButton ID="linkBtn_searchWorkers" Text="search workers" runat="server" OnClick="gotoSearchWorkers" Visible="true"></asp:LinkButton><br />
+        <asp:LinkButton ID="linkBtn_profile" Text="profile page" runat="server" OnClick="gotoProfilePage" Visible="true"></asp:LinkButton><br />
+            
+        </asp:ContentPlaceHolder>
+         <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            
+        </asp:ContentPlaceHolder>
+    </div>
+    </form>
+</body>
+</html>

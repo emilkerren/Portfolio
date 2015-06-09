@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>EFDataSources</id>
+    <version>1.0.0.0</version>
+    <title>DbContect DataSource Web Control</title>
+    <authors>EGYPTAIR TRAINING CENTER</authors>
+    <owners>EGYPTAIR TRAINING CENTER</owners>
+    <projectUrl>http://training.egyptair.com/Page/Development/DbContextDataSource</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Data Dource Control That Uses DbContext as Storage, Overrides LinqDataSource</description>
+    <releaseNotes>Initial Release for the DbContextDataSource for EF Code First DbContext</releaseNotes>
+    <copyright>Copyright 2012</copyright>
+    <tags>DbContext DataSource Entityframework CodeFirst WebForms</tags>
+    <dependencies>
+      <dependency id="EntityFramework" version="5.0.0" />
+    </dependencies>
+  </metadata>
+</package>
