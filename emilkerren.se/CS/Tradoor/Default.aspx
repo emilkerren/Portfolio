@@ -25,21 +25,14 @@
            Here you can create a profile as a "jobcreator" or "worker". <br />
            When you are logged in you either bid on jobs or create them, depending on what your account status is.<br />
            You can also check out the jobcreators profile if you are a worker and vice versa. <br />
-           If you don't wanna create a profile you can use "emketradoor" with password "emkepw1" as jobcreator.<br />
-           And "moketradoor" with password "mokepw1" as worker.
+           If you don't wanna create a profile you can use "emke" with password "emkepw" as jobcreator.<br />
+           And "moke" with password "mokepw" as worker.
            Enjoy! <br />
            Below is some jobs currently not taken.
               </p>
-       <asp:GridView ID="GW_jobsWithBids" runat="server" AutoGenerateColumns="False" OnRowDataBound="GW_jobsWithBids_RowDataBound">
-           <Columns>
-               <asp:BoundField DataField="Title" HeaderText="Title" SortExpression="Title" />
-               <asp:BoundField DataField="Description" HeaderText="Description" SortExpression="Description" />
-               <asp:BoundField DataField="Category" HeaderText="Category" SortExpression="Category" />
-               <asp:BoundField DataField="Location" HeaderText="Location" SortExpression="Location" />
-               <asp:BoundField DataField="AskingPrice" HeaderText="AskingPrice" SortExpression="AskingPrice" />
-           </Columns>
+       <asp:GridView ID="GW_jobsWithBids" runat="server" AutoGenerateColumns="True" OnRowDataBound="GW_jobsWithBids_RowDataBound">
          </asp:GridView>
-         <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:fuohulnwTradoorDbConnectionString %>" SelectCommand="SELECT [Title], [Description], [Category], [Location], [AskingPrice] FROM [JobSet]"></asp:SqlDataSource>
+         <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ASPTentaDbConnectionString %>" SelectCommand="SELECT [Title], [Description], [Category], [Location], [AskingPrice] FROM [JobSet]"></asp:SqlDataSource>
     </div>
     </form>
 </body>
