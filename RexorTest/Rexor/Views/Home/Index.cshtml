@@ -1,0 +1,47 @@
+﻿
+@{
+    Layout = null;
+}
+
+@using Rexor.Models;
+@using Rexor.DAL;
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+   
+    <title>Index</title>
+</head>
+<body>
+    <div> 
+        <h2>The more you buy the more you save!</h2>
+        @*@Html.DropDownList("CustomerDD", (IEnumerable<SelectListItem>)ViewData["CustomerList"])*@
+        <table>
+            <tr>
+                <th>Product name</th>
+                <th>Quantity</th>
+               
+            </tr>
+
+            @foreach (var x in @Model)
+            {
+                <tr>
+                    <td>
+                        @x.Name
+                    </td> 
+                    @using (Html.BeginForm("OrderNow", "ShoppingCart", new { id = x.ProductId }))
+                    {
+                        <td>
+                            @Html.TextBox("quantity")
+                        </td>
+                        <td>
+                            <input type="submit" value="Go to checkout">
+                        </td>
+                    }
+                </tr>
+            }
+        </table>
+    </div>
+</body>
+</html>
