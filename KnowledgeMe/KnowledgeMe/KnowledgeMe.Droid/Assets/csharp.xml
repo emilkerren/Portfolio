@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Questions>
+  <Question value="easy">
+    <Text>what type is this variable? var myNum = 32
+  </Text>
+    <Alternatives>
+      <Alternative bool="true">int</Alternative>
+      <Alternative bool="false">bool</Alternative>
+      <Alternative bool="false">string</Alternative>
+    </Alternatives>
+  </Question>
+  <Question value="easy">
+    <Text>How many times does it loop? for(var i; i &lt; 3:i++)</Text>
+    <Alternatives>
+      <Alternative bool="false">3</Alternative>
+      <Alternative bool="true">4</Alternative>
+      <Alternative bool="false">5</Alternative>
+    </Alternatives>
+  </Question>
+  <Question value="easy">
+    <Text>what does &amp;&amp; mean?</Text>
+    <Alternatives>
+      <Alternative bool="false">OR</Alternative>
+      <Alternative bool="false">MAKE NULL</Alternative>
+      <Alternative bool="true">AND</Alternative>
+    </Alternatives>
+  </Question>
+  <Question value="medium">
+    <Text>Medium Question number 1?</Text>
+    <Alternatives>
+      <Alternative bool="false">medium question alternative 1 Q1></Alternative>
+      <Alternative bool="true">medium question alternative 2 Q1></Alternative>
+      <Alternative bool="false">medium question alternative 3 Q1></Alternative>
+    </Alternatives>
+  </Question>
+  <Question value="medium">
+    <Text>Medium Question number 2?</Text>
+    <Alternatives>
+      <Alternative bool="true">medium question alternative 1 Q2></Alternative>
+      <Alternative bool="false">medium question alternative 2 Q2></Alternative>
+      <Alternative bool="false">medium question alternative 3 Q2></Alternative>
+    </Alternatives>
+  </Question>
+  <Question value="medium">
+    <Text>Medium Question number 3?</Text>
+    <Alternatives>
+      <Alternative bool="false">medium question alternative 1 Q3></Alternative>
+      <Alternative bool="false">medium question alternative 2 Q3></Alternative>
+      <Alternative bool="true">medium question alternative 3 Q3></Alternative>
+    </Alternatives>
+  </Question>
+  <Question value="hard">
+    <Text>Hard Question number 1?</Text>
+    <Alternatives>
+      <Alternative bool="false">hard question alternative 1 Q1></Alternative>
+      <Alternative bool="false">hard question alternative 2 Q1></Alternative>
+      <Alternative bool="true">hard question alternative 3 Q1></Alternative>
+    </Alternatives>
+  </Question>
+  <Question value="hard">
+    <Text>Hard Question number 2?</Text>
+    <Alternatives>
+      <Alternative bool="false">hard question alternative 1 Q2></Alternative>
+      <Alternative bool="true">hard question alternative 2 Q2></Alternative>
+      <Alternative bool="false">hard question alternative 3 Q2></Alternative>
+    </Alternatives>
+  </Question>
+  <Question value="hard">
+    <Text>Hard Question number 3?</Text>
+    <Alternatives>
+      <Alternative bool="false">hard question alternative 1 Q3></Alternative>
+      <Alternative bool="false">hard question alternative 2 Q3></Alternative>
+      <Alternative bool="true">hard question alternative 3 Q3></Alternative>
+    </Alternatives>
+  </Question>
+</Questions>

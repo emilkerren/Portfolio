@@ -1,0 +1,221 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Questions>
+  <Java>
+    <Easy>
+      <Question value="Easy Question number 1?">
+        <Alternatives>
+          <Alternative value="easy question alternative 1 Q1"></Alternative>
+          <Alternative value="easy question alternative 2 Q1"></Alternative>
+          <Alternative value="easy question alternative 3 Q1"></Alternative>
+        </Alternatives>
+      </Question>
+      <Question value="Easy Question number 2?">
+        <Alternatives>
+          <Alternative value="easy question alternative 1 Q2"></Alternative>
+          <Alternative value="easy question alternative 2 Q2"></Alternative>
+          <Alternative value="easy question alternative 3 Q2"></Alternative>
+        </Alternatives>
+      </Question>
+      <Question value="Easy Question number 3?">
+        <Alternatives>
+          <Alternative value="easy question alternative 1 Q3"></Alternative>
+          <Alternative value="easy question alternative 2 Q3"></Alternative>
+          <Alternative value="easy question alternative 3 Q3"></Alternative>
+        </Alternatives>
+      </Question>
+    </Easy>
+    <Medium>
+      <Question value="medium Question number 1?">
+        <Alternatives>
+          <Alternative value="medium question alternative 1 Q1"></Alternative>
+          <Alternative value="medium question alternative 2 Q1"></Alternative>
+          <Alternative value="medium question alternative 3 Q1"></Alternative>
+        </Alternatives>
+      </Question>
+      <Question value="medium Question number 2?">
+        <Alternatives>
+          <Alternative value="medium question alternative 1 Q2"></Alternative>
+          <Alternative value="medium question alternative 2 Q2"></Alternative>
+          <Alternative value="medium question alternative 3 Q2"></Alternative>
+        </Alternatives>
+      </Question>
+      <Question  value="medium Question number 3?">
+        <Alternatives>
+          <Alternative value="medium question alternative 1 Q3"></Alternative>
+          <Alternative value="medium question alternative 2 Q3"></Alternative>
+          <Alternative value="medium question alternative 3 Q3"></Alternative>
+        </Alternatives>
+      </Question>
+    </Medium>
+    <Hard>
+      <Question value="hard Question number 1?">
+        <Alternatives>
+          <Alternative value="hard question alternative 1 Q1"></Alternative>
+          <Alternative value="hard question alternative 2 Q1"></Alternative>
+          <Alternative value="hard question alternative 3 Q1"></Alternative>
+        </Alternatives>
+      </Question>
+      <Question value="hard Question number 2?">
+        <Alternatives>
+          <Alternative value="hard question alternative 1 Q2"></Alternative>
+          <Alternative value="hard question alternative 2 Q2"></Alternative>
+          <Alternative value="hard question alternative 3 Q2"></Alternative>
+        </Alternatives>
+      </Question>
+      <Question value="hard Question number 3?">
+        <Alternatives>
+          <Alternative value="hard question alternative 1 Q3"></Alternative>
+          <Alternative value="hard question alternative 2 Q3"></Alternative>
+          <Alternative value="hard question alternative 3 Q3"></Alternative>
+        </Alternatives>
+      </Question>
+    </Hard>
+  </Java>
+  
+  
+  <CSharp>
+    <Easy>
+      <Question value="Easy Question number 1?">
+        <Alternatives>
+          <Alternative value="Easy question alternative 1 Q1"></Alternative>
+          <Alternative value="Easy question alternative 2 Q1"></Alternative>
+          <Alternative value="Easy question alternative 3 Q1"></Alternative>
+        </Alternatives>
+      </Question>
+      <Question value="Easy Question number 2?">
+        <Alternatives>
+          <Alternative value="Easy question alternative 1 Q2"></Alternative>
+          <Alternative value="Easy question alternative 2 Q2"></Alternative>
+          <Alternative value="Easy question alternative 3 Q2"></Alternative>
+        </Alternatives>
+      </Question>
+      <Question value="Easy Question number 3?">
+        <Alternatives>
+          <Alternative value="Easy question alternative 1 Q3"></Alternative>
+          <Alternative value="Easy question alternative 2 Q3"></Alternative>
+          <Alternative value="Easy question alternative 3 Q3"></Alternative>
+        </Alternatives>
+      </Question>
+    </Easy>
+    <Medium>
+      <Question value="Medium Question number 1?">
+        <Alternatives>
+          <Alternative value="medium question alternative 1 Q1"></Alternative>
+          <Alternative value="medium question alternative 2 Q1"></Alternative>
+          <Alternative value="medium question alternative 3 Q1"></Alternative>
+        </Alternatives>
+      </Question>
+      <Question value="Medium Question number 2?">
+        <Alternatives>
+          <Alternative value="medium question alternative 1 Q2"></Alternative>
+          <Alternative value="medium question alternative 2 Q2"></Alternative>
+          <Alternative value="medium question alternative 3 Q2"></Alternative>
+        </Alternatives>
+      </Question>
+      <Question value="Medium Question number 3?">
+        <Alternatives>
+          <Alternative value="medium question alternative 1 Q3"></Alternative>
+          <Alternative value="medium question alternative 2 Q3"></Alternative>
+          <Alternative value="medium question alternative 3 Q3"></Alternative>
+        </Alternatives>
+      </Question>
+    </Medium>
+    <Hard>
+      <Question value="Hard Question number 1?">
+        <Alternatives>
+          <Alternative value="hard question alternative 1 Q1"></Alternative>
+          <Alternative value="hard question alternative 2 Q1"></Alternative>
+          <Alternative value="hard question alternative 3 Q1"></Alternative>
+        </Alternatives>
+      </Question>
+      <Question value="Hard Question number 2?">
+        <Alternatives>
+          <Alternative value="hard question alternative 1 Q2"></Alternative>
+          <Alternative value="hard question alternative 2 Q2"></Alternative>
+          <Alternative value="hard question alternative 3 Q2"></Alternative>
+        </Alternatives>
+      </Question>
+      <Question value="Hard Question number 3?">
+        <Alternatives>
+          <Alternative value="hard question alternative 1 Q3"></Alternative>
+          <Alternative value="hard question alternative 2 Q3"></Alternative>
+          <Alternative value="hard question alternative 3 Q3"></Alternative>
+        </Alternatives>
+      </Question>
+    </Hard>
+  </CSharp>
+  
+  
+  
+    <Javascript>
+    <Easy>
+      <Question value="Easy Question number 1?">
+        <Alternatives>
+          <Alternative value="Easy question alternative 1 Q1"></Alternative>
+          <Alternative value="Easy question alternative 2 Q1"></Alternative>
+          <Alternative value="Easy question alternative 3 Q1"></Alternative>
+        </Alternatives>
+      </Question>
+      <Question value="Easy Question number 2?">
+        <Alternatives>
+          <Alternative value="Easy question alternative 1 Q2"></Alternative>
+          <Alternative value="Easy question alternative 2 Q2"></Alternative>
+          <Alternative value="Easy question alternative 3 Q2"></Alternative>
+        </Alternatives>
+      </Question>
+      <Question value="Easy Question number 3?">
+        <Alternatives>
+          <Alternative value="Easy question alternative 1 Q3"></Alternative>
+          <Alternative value="Easy question alternative 2 Q3"></Alternative>
+          <Alternative value="Easy question alternative 3 Q3"></Alternative>
+        </Alternatives>
+      </Question>
+    </Easy>
+    <Medium>
+      <Question value="Medium Question number 1?">
+        <Alternatives>
+          <Alternative value="medium question alternative 1 Q1"></Alternative>
+          <Alternative value="medium question alternative 2 Q1"></Alternative>
+          <Alternative value="medium question alternative 3 Q1"></Alternative>
+        </Alternatives>
+      </Question>
+      <Question value="Medium Question number 2?">
+        <Alternatives>
+          <Alternative value="medium question alternative 1 Q2"></Alternative>
+          <Alternative value="medium question alternative 2 Q2"></Alternative>
+          <Alternative value="medium question alternative 3 Q2"></Alternative>
+        </Alternatives>
+      </Question>
+      <Question value="Medium Question number 3?">
+        <Alternatives>
+          <Alternative value="medium question alternative 1 Q3"></Alternative>
+          <Alternative value="medium question alternative 2 Q3"></Alternative>
+          <Alternative value="medium question alternative 3 Q3"></Alternative>
+        </Alternatives>
+      </Question>
+    </Medium>
+    <Hard>
+      <Question value="Hard Question number 1?">
+        <Alternatives>
+          <Alternative value="hard question alternative 1 Q1"></Alternative>
+          <Alternative value="hard question alternative 2 Q1"></Alternative>
+          <Alternative value="hard question alternative 3 Q1"></Alternative>
+        </Alternatives>
+      </Question>
+      <Question value="Hard Question number 2?">
+        <Alternatives>
+          <Alternative value="hard question alternative 1 Q2"></Alternative>
+          <Alternative value="hard question alternative 2 Q2"></Alternative>
+          <Alternative value="hard question alternative 3 Q2"></Alternative>
+        </Alternatives>
+      </Question>
+      <Question value="Hard Question number 3?">
+        <Alternatives>
+          <Alternative value="hard question alternative 1 Q3"></Alternative>
+          <Alternative value="hard question alternative 2 Q3"></Alternative>
+          <Alternative value="hard question alternative 3 Q3"></Alternative>
+        </Alternatives>
+      </Question>
+    </Hard>
+  </Javascript>
+</Questions>
