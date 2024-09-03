@@ -98,3 +98,18 @@ migrations/
 # Web server logs
 iis/*.log
 /RexorTest/Rexor/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
+# Directories potentially created on remote AFP share
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+# VS
+.vs
+
+# Cache
+*.cache
+
+Debug/
+Release/
