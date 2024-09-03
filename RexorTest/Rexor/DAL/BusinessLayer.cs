@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Rexor.Models;
 namespace Rexor.DAL
 {
@@ -11,7 +8,7 @@ namespace Rexor.DAL
     {
         public List<Customer> GetCustomers(){
             List<Customer> customers = new List<Customer>();
-            customers.Add(new Customer { Name = "IKEA",  CustomerId= 0, RebateId= 0, DateAdded = DateTime.Now, AmountBought = 1000 });
+            customers.Add(new Customer { Name = "IKEA", CustomerId = 0, RebateId = 0, DateAdded = DateTime.Now, AmountBought = 1000 });
             customers.Add(new Customer { Name = "JYSK", CustomerId = 1, RebateId = 1, DateAdded = DateTime.Now, AmountBought = 3000 });
             customers.Add(new Customer { Name = "MIO", CustomerId = 2, RebateId = 2, DateAdded = DateTime.Now, AmountBought = 5000 });
             return customers;

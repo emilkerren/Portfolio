@@ -2,7 +2,6 @@
     Layout = null;
 }
 @using Rexor.Controllers;
-@using Rexor.Models;
 <!DOCTYPE html>
 
 <html>
@@ -40,11 +39,6 @@
             @Html.DropDownList("CustomerId",
             (SelectList)ViewBag.Customers,
             "select one"
-            //,
-            // new
-            // {
-            //     onchange = "document.getElementById('TheForm').submit();"
-            // }
             )
            
         </div>
