@@ -62,7 +62,7 @@ artifacts/
 # NuGet
 *.nupkg
 # Include if NuGet packages are restored during the build process
-packages/
+# packages/
 # Uncomment if using NuGet's old style packages directory
 # packages/*/src/
 # packages/*/tools/
