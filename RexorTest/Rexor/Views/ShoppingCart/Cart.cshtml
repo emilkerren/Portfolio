@@ -28,23 +28,31 @@
                 <td>@item.Quantity</td>
                 <td>@(item.Quantity * item.Product.Price)</td>
             </tr>
-            
+
         }
     </table>
 
-    @using (Html.BeginForm("Calculate", "ShoppingCart", FormMethod.Post, new {id="TheForm" }))
+    @{
+        if (TempData["AlertMessage"] != null)
+        {
+            <script type="text/javascript">
+        alert('@TempData["AlertMessage"]');
+            </script>
+        }
+    }
+    @using (Html.BeginForm("Calculate", "ShoppingCart", FormMethod.Post, new { id = "TheForm" }))
     {
         <fieldset>
-        <div>
-            @Html.DropDownList("CustomerId",
-            (SelectList)ViewBag.Customers,
-            "select one"
-            )
-           
-        </div>
-        <div>
-            <input type="submit", value="Calculate" class="submit"/>
-        </div>
+            <div>
+                @Html.DropDownList("CustomerId",
+                (SelectList)ViewBag.Customers,
+                "select one"
+                )
+
+            </div>
+            <div>
+                <input type="submit" , value="Calculate" class="submit" />
+            </div>
         </fieldset>
     }
 </body>

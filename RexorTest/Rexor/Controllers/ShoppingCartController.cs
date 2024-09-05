@@ -1,5 +1,5 @@
-﻿using Rexor.DAL;
-using Rexor.Models;
+﻿using Rexor.Models;
+using Rexor.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +9,9 @@ namespace Rexor.Controllers
 {
     public class ShoppingCartController : Controller
     {
-        private BusinessLayer productsBL = new BusinessLayer();
+        private ProductsService productsService = new ProductsService();
+        private CustomerService customersService = new CustomerService();
+        private RebateService rebatesService = new RebateService();
         private List<Product> shoppingProducts = new List<Product>();
         private List<Customer> customers = new List<Customer>();
         private List<Rebate> rebates = new List<Rebate>();
@@ -37,12 +39,14 @@ namespace Rexor.Controllers
         {
             if(Session["cart"] == null)
             {
-                shoppingProducts = productsBL.GetProducts();
-                List<Item> cart = new List<Item>();
-                cart.Add(new Item(shoppingProducts.Find(x => x.ProductId == id), quantity));
+                shoppingProducts = productsService.GetProducts();
+                List<Item> cart = new List<Item>
+                {
+                    new Item(shoppingProducts.Find(x => x.ProductId == id), quantity)
+                };
                 Session["cart"] = cart;
             }
-            customers = productsBL.GetCustomers();
+            customers = customersService.GetCustomers();
             IEnumerable<SelectListItem> selectListItems = customers.Select(c => new SelectListItem
                 {
                     Value = c.CustomerId.ToString(),
@@ -64,8 +68,8 @@ namespace Rexor.Controllers
         [HttpPost]
         public ActionResult Calculate(FormCollection formCollection)
         {
-            customers = productsBL.GetCustomers();
-            rebates = productsBL.GetRebates();
+            customers = customersService.GetCustomers();
+            rebates = rebatesService.GetRebates();
             Session["Calc"] = Session["cart"];
             var item = (List<Item>)Session["Calc"];
             
@@ -80,6 +84,10 @@ namespace Rexor.Controllers
                 int _key = Convert.ToInt32(formCollection[key]);
                 Customer selCust = customers.Find(x => x.CustomerId == _key);
                 Rebate rebateForCustomer = rebates.Find(r => r.RebateId == selCust.RebateId);
+                if (rebateForCustomer == null) {
+                    TempData["AlertMessage"] = "Customer must be chosen! you chose " + "selCust: " + selCust.Name + " with rebateId: " + selCust.RebateId;
+                    continue; 
+                }
                 Response.Write("Customer chosen = " + " ");
                 Response.Write(selCust.Name);
                 Response.Write("<br>");

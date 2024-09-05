@@ -1,6 +1,5 @@
-﻿using Rexor.DAL;
-using Rexor.Models;
-using System.Collections.Generic;
+﻿using Rexor.Models;
+using Rexor.Services;
 using System.Web.Mvc;
 
 namespace Rexor.Controllers
@@ -10,9 +9,30 @@ namespace Rexor.Controllers
         // GET: Customer
         public ActionResult Index()
         {
-            BusinessLayer customerBL = new BusinessLayer();
-            List<Customer> customers = customerBL.GetCustomers();
-            return View(customers);
+            CustomerService customerService = new CustomerService();
+            return View(customerService.GetCustomers());
+        }
+        // CREATE: Customer
+        public ActionResult Create()
+        {
+            return View();
+        }
+        
+        // POST: Customers/Create
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Create(Customer customer)
+        {
+            if (ModelState.IsValid)
+            {
+                CustomerService service = new CustomerService();
+                service.CreateCustomer(customer);
+                TempData["SuccessMessage"] = "Customer created successfully!";
+                return RedirectToAction("Index"); // Redirect to the list or another action
+            }
+
+            // If we got this far, something failed; redisplay form.
+            return View(customer);
         }
     }
 }
