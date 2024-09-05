@@ -19,7 +19,7 @@ namespace Rexor.Controllers
         // GET: ShoppingCart
         public ActionResult Index()
         {
-           
+
             return View();
         }
         private int isExisting(int id)
@@ -27,17 +27,18 @@ namespace Rexor.Controllers
             List<Item> cart = (List<Item>)Session["cart"];
             for (int i = 0; i < cart.Count; i++)
             {
-                if(cart[i].Product.ProductId == id){
+                if (cart[i].Product.ProductId == id)
+                {
 
                     return i;
                 }
             }
-                return -1;
+            return -1;
         }
-        
+
         public ActionResult OrderNow(int id, int quantity)
         {
-            if(Session["cart"] == null)
+            if (Session["cart"] == null)
             {
                 shoppingProducts = productsService.GetProducts();
                 List<Item> cart = new List<Item>
@@ -48,10 +49,10 @@ namespace Rexor.Controllers
             }
             customers = customersService.GetCustomers();
             IEnumerable<SelectListItem> selectListItems = customers.Select(c => new SelectListItem
-                {
-                    Value = c.CustomerId.ToString(),
-                    Text = c.Name
-                });
+            {
+                Value = c.CustomerId.ToString(),
+                Text = c.Name
+            });
             //foreach (Customer cust in customers)
             //{
             //    SelectListItem selectListItem = new SelectListItem
@@ -72,21 +73,25 @@ namespace Rexor.Controllers
             rebates = rebatesService.GetRebates();
             Session["Calc"] = Session["cart"];
             var item = (List<Item>)Session["Calc"];
-            
+
             IEnumerable<SelectListItem> selectListItems = customers.Select(c => new SelectListItem
             {
                 Value = c.CustomerId.ToString(),
                 Text = c.Name
             });
+
             ViewBag.CustomerId = selectListItems;
+            TempData["AlertMessage"] = ViewBag.Text;
             foreach (string key in formCollection.AllKeys)
             {
-                int _key = Convert.ToInt32(formCollection[key]);
+                if(string.IsNullOrEmpty(formCollection[key])) continue;
+                int _key = ConvertKey(key, formCollection);
                 Customer selCust = customers.Find(x => x.CustomerId == _key);
                 Rebate rebateForCustomer = rebates.Find(r => r.RebateId == selCust.RebateId);
-                if (rebateForCustomer == null) {
+                if (rebateForCustomer == null)
+                {
                     TempData["AlertMessage"] = "Customer must be chosen! you chose " + "selCust: " + selCust.Name + " with rebateId: " + selCust.RebateId;
-                    continue; 
+                    continue;
                 }
                 Response.Write("Customer chosen = " + " ");
                 Response.Write(selCust.Name);
@@ -98,9 +103,27 @@ namespace Rexor.Controllers
                 Response.Write(rebateForCustomer.Amount * (item[0].Product.Price * item[0].Quantity));
                 Response.Write("<br>");
             }
+
             //string val = formCollection["Customers"];
             //Response.Write(val);
             return View("Cart");
+        }
+
+        private int ConvertKey(string key, FormCollection formCollection)
+        {
+            try
+            {
+                return Convert.ToInt32(formCollection[key]);
+            }
+            catch (ArithmeticException arithmeticException)
+            {
+                throw new Exception(arithmeticException.Message);
+            }
+            catch (FormatException formatException)
+            {
+                TempData["AlertMessage"] = "Customer must be chosen! You chose: " + formCollection[key];
+                throw new Exception($"Key was {key}", formatException);
+            }
         }
     }
 }
