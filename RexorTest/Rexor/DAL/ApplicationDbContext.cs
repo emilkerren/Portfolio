@@ -12,6 +12,7 @@ namespace Rexor.Controllers
         public DbSet<Customer> Customers { get; set; }
         public DbSet<Product> Products { get; set; }
         public DbSet<Rebate> Rebates { get; set; }
+        public DbSet<Item> Items { get; set; }
 
         // Add more DbSets for other entities
     }

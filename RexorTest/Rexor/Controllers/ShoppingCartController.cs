@@ -19,9 +19,18 @@ namespace Rexor.Controllers
         // GET: ShoppingCart
         public ActionResult Index()
         {
+            CustomerService customerService = new CustomerService();
+            List<Customer> customers = customerService.GetCustomers();
+            List<SelectListItem> customerItems = customers.Select(p => new SelectListItem
+            {
+                Value = p.CustomerId.ToString(),
+                Text = p.Name.ToString()
+            }).ToList();
 
+            ViewBag.Customers = customerItems;
             return View();
         }
+
         private int isExisting(int id)
         {
             List<Item> cart = (List<Item>)Session["cart"];
@@ -66,6 +75,7 @@ namespace Rexor.Controllers
             ViewBag.CustomerId = selectListItems;
             return View("Cart");
         }
+
         [HttpPost]
         public ActionResult Calculate(FormCollection formCollection)
         {
@@ -81,7 +91,6 @@ namespace Rexor.Controllers
             });
 
             ViewBag.CustomerId = selectListItems;
-            TempData["AlertMessage"] = ViewBag.Text;
             foreach (string key in formCollection.AllKeys)
             {
                 if(string.IsNullOrEmpty(formCollection[key])) continue;

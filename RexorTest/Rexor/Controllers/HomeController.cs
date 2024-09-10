@@ -1,6 +1,7 @@
 ﻿using Rexor.Models;
 using Rexor.Services;
 using System.Collections.Generic;
+using System.Linq;
 using System.Web.Mvc;
 
 namespace Rexor.Controllers
@@ -12,9 +13,13 @@ namespace Rexor.Controllers
         {
             ProductsService productsService = new ProductsService();
             List<Product> products = productsService.GetProducts();
-            //ViewData["CustomerList"] = Enum.GetValues(typeof(Customer)).Cast<Customer>().Select(c => new SelectListItem { Text = c.Name.ToString(), Value = c.CustomerId.ToString() });
-
-            return View(products);
+            List<SelectListItem> productItems = products.Select(p => new SelectListItem
+            {
+                Value = p.ProductId.ToString(),
+                Text = p.Name.ToString()
+            }).ToList();
+            ViewBag.Products = productItems;
+            return View();
         }
     }
 }

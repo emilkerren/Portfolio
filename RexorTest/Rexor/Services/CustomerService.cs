@@ -4,7 +4,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.Caching;
-
 namespace Rexor.Services
 {
     public class CustomerService
@@ -31,10 +30,19 @@ namespace Rexor.Services
             return (List<Customer>)_cache[cacheKey];
         }
 
-        public void CreateCustomer(Customer customer)
+        public bool CreateCustomer(Customer customer)
         {
-            db.Customers.Add(customer);
-            db.SaveChanges();
+            try
+            {
+                db.Customers.Add(customer);
+                db.SaveChanges();
+                return true;
+            }
+            catch (Exception ex)
+            {
+               Console.WriteLine("Failed to save: Message: " + ex);
+               return false;
+            }
         }
     }
 }

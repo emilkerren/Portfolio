@@ -12,34 +12,57 @@
     <title>Index</title>
 </head>
 <body>
-    <div> 
+    <div>
         <h2>The more you buy the more you save!</h2>
-        @*@Html.DropDownList("CustomerDD", (IEnumerable<SelectListItem>)ViewData["CustomerList"])*@
-        <table>
+        @*<table>
             <tr>
                 <th>Product name</th>
                 <th>Quantity</th>
-               
+
             </tr>
 
-            @foreach (var x in @Model)
-            {
+
                 <tr>
-                    <td>
-                        @x.Name
-                    </td> 
-                    @using (Html.BeginForm("OrderNow", "ShoppingCart", new { id = x.ProductId }))
-                    {
+                    <fieldset>
+                        <div>
+                            @Html.DropDownList("Name",
+                                (SelectListItem)ViewBag.Products,
+                                "select one"
+                                )
+                            </div>
+                        </fieldset>
+                            @using (Html.BeginForm("OrderNow", "ShoppingCart", new { id = Model.ProductId }))
+                            {
                         <td>
+                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                             @Html.TextBox("quantity")
+                            @Html.ValidationMessageFor(y => y, "", new { @class = "text-danger" })
                         </td>
                         <td>
                             <input type="submit" value="Go to checkout">
                         </td>
                     }
                 </tr>
-            }
-        </table>
-    </div>
+
+        </table>*@
+        <!--<fieldset>
+        @Html.Label("Select Product")-->
+        <!-- Dropdown for Products -->
+        <!--@Html.DropDownList("Products", "ProductId")
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        </fieldset>
+        @using (Html.BeginForm("OrderNow", "ShoppingCart", new { id = Model.ProductId }))
+        {
+            <fieldset>
+                <div class="form-group">
+                    @Html.TextBox("quantity")
+                    @Html.ValidationMessageFor(model => model, "", new { @class = "text-danger" })
+                </div>
+                <div>
+                    <input type="submit" , value="Go to checkout" />
+                </div>
+            </fieldset>
+        }
+    </div>-->
 </body>
 </html>

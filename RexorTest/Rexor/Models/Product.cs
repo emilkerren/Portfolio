@@ -7,8 +7,11 @@ namespace Rexor.Models
     {
         [Key]
         public int ProductId { get; set; }
+        [Required]
         public string Name { get; set; }
-        public DateTime DateAdded { get; set; }
+        [Required]
+        public DateTime DateAdded { get; private set; } = DateTime.Now;
+        [Required]
         public double Price { get; set;}
         public Product()
         {
