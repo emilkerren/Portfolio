@@ -9,30 +9,30 @@ namespace Rexor.Services
 {
     public class RebateService
     {
-        private static readonly MemoryCache _cache = MemoryCache.Default;
+        private static readonly MemoryCache Cache = MemoryCache.Default;
 
-        private ApplicationDbContext db = new ApplicationDbContext();
+        private ApplicationDbContext _db = new ApplicationDbContext();
+
         public List<Rebate> GetRebates()
         {
             var cacheKey = "RebateList";
-            if (!_cache.Contains(cacheKey))
-            {
-                // Fetch from database
-                var rebates = db.Rebates.ToList();
+            if (Cache.Contains(cacheKey)) return (List<Rebate>)Cache[cacheKey];
+            // Fetch from database
+            var rebates = _db.Rebates.ToList();
 
-                // Cache for 10 minutes
-                var cacheItemPolicy = new CacheItemPolicy
-                {
-                    AbsoluteExpiration = DateTimeOffset.Now.AddMinutes(10)
-                };
-                _cache.Add(cacheKey, rebates, cacheItemPolicy);
-            }
-            return (List<Rebate>)_cache[cacheKey];
+            // Cache for 10 minutes
+            var cacheItemPolicy = new CacheItemPolicy
+            {
+                AbsoluteExpiration = DateTimeOffset.Now.AddMinutes(10)
+            };
+            Cache.Add(cacheKey, rebates, cacheItemPolicy);
+            return (List<Rebate>)Cache[cacheKey];
         }
+
         public void CreateRebate(Rebate rebate)
         {
-            db.Rebates.Add(rebate);
-            db.SaveChanges();
+            _db.Rebates.Add(rebate);
+            _db.SaveChanges();
         }
     }
 }

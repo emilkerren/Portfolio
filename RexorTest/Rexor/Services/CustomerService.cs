@@ -8,34 +8,32 @@ namespace Rexor.Services
 {
     public class CustomerService
     {
-        private static readonly MemoryCache _cache = MemoryCache.Default;
+        private static readonly MemoryCache Cache = MemoryCache.Default;
 
-        private ApplicationDbContext db = new ApplicationDbContext();
+        private ApplicationDbContext _db = new ApplicationDbContext();
         public List<Customer> GetCustomers()
         {
             var cacheKey = "CustomerList";
-            if (!_cache.Contains(cacheKey))
+            if (Cache.Contains(cacheKey)) return (List<Customer>)Cache[cacheKey];
+            // Fetch from database
+            var customers = _db.Customers.ToList();
+
+            // Cache for 10 minutes
+            var cacheItemPolicy = new CacheItemPolicy
             {
-                // Fetch from database
-                var customers = db.Customers.ToList();
+                AbsoluteExpiration = DateTimeOffset.Now.AddMinutes(10)
+            };
+            Cache.Add(cacheKey, customers, cacheItemPolicy);
 
-                // Cache for 10 minutes
-                var cacheItemPolicy = new CacheItemPolicy
-                {
-                    AbsoluteExpiration = DateTimeOffset.Now.AddMinutes(10)
-                };
-                _cache.Add(cacheKey, customers, cacheItemPolicy);
-            }
-
-            return (List<Customer>)_cache[cacheKey];
+            return (List<Customer>)Cache[cacheKey];
         }
 
         public bool CreateCustomer(Customer customer)
         {
             try
             {
-                db.Customers.Add(customer);
-                db.SaveChanges();
+                _db.Customers.Add(customer);
+                _db.SaveChanges();
                 return true;
             }
             catch (Exception ex)

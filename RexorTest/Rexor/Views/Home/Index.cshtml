@@ -1,5 +1,4 @@
-﻿
-@{
+﻿@{
     Layout = null;
 }
 
@@ -7,14 +6,14 @@
 
 <html>
 <head>
-    <meta name="viewport" content="width=device-width" />
-   
+    <meta name="viewport" content="width=device-width"/>
+
     <title>Index</title>
 </head>
 <body>
-    <div>
-        <h2>The more you buy the more you save!</h2>
-        @*<table>
+<div>
+    <h2>The more you buy the more you save!</h2>
+    @*<table>
             <tr>
                 <th>Product name</th>
                 <th>Quantity</th>
@@ -45,24 +44,24 @@
                 </tr>
 
         </table>*@
-        <!--<fieldset>
+    <fieldset>
         @Html.Label("Select Product")-->
         <!-- Dropdown for Products -->
-        <!--@Html.DropDownList("Products", "ProductId")
+        @Html.DropDownList("Products", "ProductId")
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    </fieldset>
+    @using (Html.BeginForm("OrderNow", "ShoppingCart", new { id = Model.ProductId }))
+    {
+        <fieldset>
+            <div class="form-group">
+                @Html.TextBox("quantity")
+                @Html.ValidationMessageFor(model => model, "", new { @class = "text-danger" })
+            </div>
+            <div>
+                <input type="submit" value="Go to checkout"/>
+            </div>
         </fieldset>
-        @using (Html.BeginForm("OrderNow", "ShoppingCart", new { id = Model.ProductId }))
-        {
-            <fieldset>
-                <div class="form-group">
-                    @Html.TextBox("quantity")
-                    @Html.ValidationMessageFor(model => model, "", new { @class = "text-danger" })
-                </div>
-                <div>
-                    <input type="submit" , value="Go to checkout" />
-                </div>
-            </fieldset>
-        }
-    </div>-->
+    }
+</div>
 </body>
 </html>
