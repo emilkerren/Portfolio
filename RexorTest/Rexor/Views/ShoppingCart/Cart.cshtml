@@ -1,59 +1,58 @@
 ﻿@{
     Layout = null;
 }
-@using Rexor.Controllers;
+@using Rexor.Models
 <!DOCTYPE html>
 
 <html>
 <head>
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width"/>
     <title>Cart</title>
 </head>
 <body>
 
-    <table cellpadding="2" cellspacing="2" border="1" class="table" style="">
+<table class="table" style="">
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Quantity</th>
+        <th>Total price</th>
+    </tr>
+    @foreach (Item item in (List<Item>)Session["cart"])
+    {
         <tr>
-            <th>Id</th>
-            <th>Name</th>
-            <th>Price</th>
-            <th>Quantity</th>
-            <th>Total price</th>
+            <td>@item.Product.ProductId</td>
+            <td>@item.Product.Name</td>
+            <td>@item.Product.Price</td>
+            <td>@item.Quantity</td>
+            <td>@(item.Quantity * item.Product.Price)</td>
         </tr>
-        @foreach (Item item in (List<Item>)Session["cart"])
-        {
-            <tr>
-                <td>@item.Product.ProductId</td>
-                <td>@item.Product.Name</td>
-                <td>@item.Product.Price</td>
-                <td>@item.Quantity</td>
-                <td>@(item.Quantity * item.Product.Price)</td>
-            </tr>
+    }
+</table>
 
-        }
-    </table>
-
-    @{
-        if (TempData["AlertMessage"] != null)
-        {
-            <script type="text/javascript">
+@{
+    if (TempData["AlertMessage"] != null)
+    {
+        <script type="text/javascript">
         alert('@TempData["AlertMessage"]');
             </script>
-        }
     }
-    @using (Html.BeginForm("Calculate", "ShoppingCart", FormMethod.Post, new { id = "TheForm" }))
-    {
-        <fieldset>
-            <div>
-                @Html.DropDownList("CustomerId",
+}
+@using (Html.BeginForm("Calculate", "ShoppingCart", FormMethod.Post, new { id = "TheForm" }))
+{
+    <fieldset>
+        <div>
+            @Html.DropDownList("CustomerId",
                 (SelectList)ViewBag.Customers,
                 "select one"
-                )
+            )
 
-            </div>
-            <div>
-                <input type="submit" , value="Calculate" class="submit" />
-            </div>
-        </fieldset>
-    }
+        </div>
+        <div>
+            <input type="submit" , value="Calculate" class="submit"/>
+        </div>
+    </fieldset>
+}
 </body>
 </html>

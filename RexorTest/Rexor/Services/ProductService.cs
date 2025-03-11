@@ -9,31 +9,31 @@ namespace Rexor.Services
 {
     public class ProductsService
     {
-        private static readonly MemoryCache _cache = MemoryCache.Default;
+        private static readonly MemoryCache Cache = MemoryCache.Default;
 
-        private ApplicationDbContext db = new ApplicationDbContext();
+        private ApplicationDbContext _db = new ApplicationDbContext();
+
         public List<Product> GetProducts()
         {
             var cacheKey = "ProductList";
-            if (!_cache.Contains(cacheKey))
+            if (Cache.Contains(cacheKey)) return (List<Product>)Cache[cacheKey];
+            // Fetch from database
+            var products = _db.Products.ToList();
+
+            // Cache for 10 minutes
+            var cacheItemPolicy = new CacheItemPolicy
             {
-                // Fetch from database
-                var products = db.Products.ToList();
+                AbsoluteExpiration = DateTimeOffset.Now.AddMinutes(10)
+            };
+            Cache.Add(cacheKey, products, cacheItemPolicy);
 
-                // Cache for 10 minutes
-                var cacheItemPolicy = new CacheItemPolicy
-                {
-                    AbsoluteExpiration = DateTimeOffset.Now.AddMinutes(10)
-                };
-                _cache.Add(cacheKey, products, cacheItemPolicy);
-            }
-
-            return (List<Product>)_cache[cacheKey];
+            return (List<Product>)Cache[cacheKey];
         }
+
         public void CreateProduct(Product product)
         {
-            db.Products.Add(product);
-            db.SaveChanges();
+            _db.Products.Add(product);
+            _db.SaveChanges();
         }
     }
 }
