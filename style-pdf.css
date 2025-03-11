@@ -1,0 +1,12 @@
+body, html, .markdown-body, .container, .page, .preview, .markdown-preview {
+    background-color: #1f1f1f !important; /* Ändra till önskad färg */
+    color: white; /* Säkerställ att texten är läsbar */
+}
+
+pre, code {
+    background-color: #1f1f1f !important; /* Ändra kodblockens bakgrund */
+}
+
+table, th, td {
+    background-color: #1f1f1f !important; /* Ändra bakgrund på tabeller */
+}
