@@ -1,6 +1,6 @@
 ﻿<div style="max-width: 700px; margin: 0 auto; background: #1f1f1f; color: #FFFFFF">
     <div style="float: right">
-        <img src="https://media.licdn.com/dms/image/v2/C4E03AQHqexL95EDNSQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1646052480264?e=1747267200&v=beta&t=Ii51NTdXp_-HXp7dwJslAtIEfzr4TcIDl5HaHz5fHfM"
+        <img src="https://media.licdn.com/dms/image/v2/C4E03AQHqexL95EDNSQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1646052480264?e=1762387200&v=beta&t=fdFsE45Sn75AX8FeYRukhQChH43llwxRhbU8g9vM5zE"
             alt="Profile Picture"
             width="220px"
             height="240px"
@@ -19,7 +19,7 @@ Software developer with a strong background in test-automation. Proficient in ba
 
 - Java
 - C#.NET
-- Git/Github
+- Git/Github/Github Actions
 - Bash
 - Cucumber
 - Linux
@@ -29,6 +29,7 @@ Software developer with a strong background in test-automation. Proficient in ba
 - Amazon Web Services (AWS)
 - Postman
 - Jira, Azure Devops
+- JavaScript
 
 <h3>[Education] 🎓</h3>
 
@@ -50,8 +51,9 @@ Software developer with a strong background in test-automation. Proficient in ba
 
 **Axis Communications, Test engineer**
 _April 2025 - ongoing_
-- Reforming and maintaining testautomation framework for APIs used to gather product information
+- Developing a testautomation framework for APIs used to gather product information
 - Manual testing of UI
+
   _Methods and Tools Used:_ JavaScript/Chai/Axios, Github Actions
 
 **DevPort(subconsultant), Tester** 
@@ -60,6 +62,7 @@ _Okt 2024 - Mar 2025_
 - Static testing by developing test scenarios from requirements
 - Backend tests with verification in Postman
 - Manual testing in GUI
+
 _Methods and Tools Used:_ Postman, JavaScript/Chai, Azure DevOps
 
 **WirelessCar, Backend Developer Java** 
@@ -69,17 +72,20 @@ _Jan 2022 - Jun 2024_
 - Performance testing using Gatling
 - Remote assignment with occasional office visits in Gothenburg.
 - Shared on-call responsibilities within the team.
+
 _Methods and Tools Used:_ Java, AWS, Cucumber, Gatling
 
 **Ericsson AB, Software Developer**
 _Jan 2021 - Feb 2022_
 - Collaborated in enhancing product life-cycle management on Kubernetes clusters, focusing on zero downtime and successful upgrades/rollbacks.
 - Contributed to the development of customer-specific pipeline systems for product upgrades.
+
 _Methods and Tools Used:_ Kubernetes, Docker, Bash, Jenkins, Scala, Java
 
 **EON, Software Developer**
 _2020 - Jan 2021_
 - Developed a solar-panel roof component on an e-commerce website, involving cost and efficiency calculations.
+
 _Methods and Tools Used:_ Java, JPA, Hibernate, mySql, Azure DevOps
 
 
