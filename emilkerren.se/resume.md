@@ -48,6 +48,12 @@ Software developer with a strong background in test-automation. Proficient in ba
 
 <h3>[Experience]  🌟  </h3>
 
+**Axis Communications, Test engineer**
+_April 2025 - ongoing_
+- Reforming and maintaining testautomation framework for APIs used to gather product information
+- Manual testing of UI
+  _Methods and Tools Used:_ JavaScript/Chai/Axios, Github Actions
+
 **DevPort(subconsultant), Tester** 
 _Okt 2024 - Mar 2025_
 - MVP project for large Nordic IT company
@@ -85,7 +91,7 @@ _Methods and Tools Used:_ Java, JPA, Hibernate, mySql, Azure DevOps
 | Cucumber/Gherkin ★★★ | Git ★★★★ | JUnit ★★★ | Maven ★★★★ |  
 | RESTful ★★★ | Python ★ | Amazon Web Services (AWS) ★★ | Linux ★★★ |  
 | Postman ★★★ | Bash ★★ | Kubernetes ★★★ | Docker ★★ | SoapUI ★★ |  
-| Jira ★★ | JSON/XML ★★★ | Azure DevOps ★ | Gatling ★
+| Jira ★★ | JSON/XML ★★★ | Github Actions ★★ | Javascript ★★ | Azure DevOps ★ | Gatling ★
 
 <h3>[Other]</h3>
 - Nationality: Swedish
